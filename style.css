@@ -1,0 +1,25 @@
+#layout {
+	margin: 20px 0 0 200px;
+}
+.btn {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+	margin: 0px 10px 10px 0px;
+	float: left;
+	padding: 5px;
+	font-weight: bold;
+	background-image: linear-gradient(to bottom, #3498db, #70edfe);
+	box-shadow: 3px 3px 5px 0 #2C3E50;
+	display: flex;
+	align-content: center;
+}
+.topLine, .midLine, .botLine {
+	display: flex;
+	justify-content: center;
+	width: 600px;
+}
+.topLine div:last-child, .midLine div:last-child, .botLine div:last-child {
+	margin-right: 0px;
+}
