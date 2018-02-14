@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 11</title>
+	<link rel="stylesheet" href="styles11.css" />
+	<!--link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+</head>
+<body>
+	<div id="buttons">
+		<button id="js-btn" class="btn">Get Users</button>
+	</div>
+		
+	<table class="centered bordered highlight">
+	  <thead>
+		<tr>
+		  <th>ID</th>
+		  <th class="headname">Name</th>
+		  <th>Score</th>
+		</tr>
+	  </thead>
+	  <tbody id="js-tbody"></tbody>
+	</table>
+	
+	<form id="postData">
+		<h4>To ADD User enter Name and Score:</h4>
+		<p>
+			Name: <input type="text" name="name" id="name">
+		</p>
+		<p>
+			Score: <input type="number" name="score" id="score">
+		</p>
+		<input type="submit" value="Add User" class="add btn">
+	</form>
+	
+	<form id="deleteData">
+		<h4>To DELETE a User enter ID below:</h4>
+			<input type="number" class="w3-input" id="id-to-delete">
+			<br/>
+		<input type="submit" value="Delete User" class="delete btn">
+	</form>
+	
+	<form id="updateData">
+		<h4>To UPDATE User's data enter:</h4>
+		<p>
+			ID: <input type="number" name="id-to-update" id="id-to-update">
+		</p>
+		<p>
+			Name: <input type="text" name="name-to-update" id="name-to-update">
+		</p>
+		<p>
+			Score: <input type="number" name="name-to-update" id="score-to-update">
+		</p>
+		<input type="submit" value="Update User" class="update btn">
+		<!--button class="mdc-btn" type="submit" id="js-remove">Remove user</button-->
+	</form>
+	
+
+	
+	<script type="text/javascript" src="script11.js"></script>
+</body>
+</html>
+
+
+<!-- Модуль 11 - Домашнее задание
+Написать приложение для работы с REST сервисом http://fecore.net.ua/rest/, реализовать следующий функционал:
+функция getUsers должна получать текущий список всех пользователей в БД.
+функция addUser должна записывать в БД юзера с полями name и score.
+функция removeUser должна удалять из БД юзера по id.
+функция updateUser должна обновлять данные пользователя по id.
+Сделать минимальный графический интерфейс в виде панели с полями и кнопками, а так же панелью для вывода результатов операций с REST сервисом. -->
