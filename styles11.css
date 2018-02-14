@@ -1,0 +1,90 @@
+body {
+  padding: 1rem;
+}
+
+.getBtn {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+border-collapse: collapse;
+text-align: center;
+margin-bottom: 5px;
+}
+th {
+background: #AFCDE7;
+color: white;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: white;
+}
+td {
+background: #D8E6F3;
+}
+th:first-child {
+text-align: left;
+}
+#buttons {
+	margin-bottom: 5px;
+}
+.headname {
+	width: 100px;
+}
+
+form#postData {
+	width: 270px;
+	height: 215px;
+	float: left;
+	border-right: 1px solid gray;
+}
+
+form#deleteData {
+	width: 250px;
+	height: 215px;
+	float: left;
+	margin-left: 5px;
+}
+form#updateData {
+	width: 250px;
+	float: left;
+	margin-left: 5px;
+	border-left: 1px solid gray;
+	padding-left: 5px;
+}
+#js-btn {
+	background-color: #FFC334;
+}
+.add {
+	margin-left: 145px;
+	background-color: #0EC518;
+}
+
+.delete{
+	margin-left: 105px;
+	margin-top: 13px;
+	background-color: red;
+}
+#id-to-update{
+	margin-left: 22px;
+}
+#score-to-update{
+	margin-left: 1px;
+}
+.update{
+	margin-left: 143px;
+	background-color: #0E8BB8;
+	margin-bottom: 10px;
+}
+.btn {
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	height: 30px;
+}
