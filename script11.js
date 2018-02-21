@@ -14,10 +14,10 @@ const updateView = users => {
   let htmlString = "";
   users.map(user => {
     htmlString += `<tr class="row">
-						<td>${user.id}</td>
-						<td class=${user.id}>${user.name}</td>
-						<td>${user.score}</td>
-					</tr>`;
+			<td>${user.id}</td>
+			<td class=${user.id}>${user.name}</td>
+			<td>${user.score}</td>
+		</tr>`;
   });
   tBody.innerHTML = htmlString;
 };
@@ -25,7 +25,7 @@ const getUsers = () =>
 	fetch("http://fecore.net.ua/rest/")
 	.then(response => {
 		if (response.ok) return response.json();
-		throw new Error("Error fetching data");
+		throw new Error(`Error fetching data`);
 	})
 	.then(data =>
 		updateView(data)
@@ -38,17 +38,17 @@ const getUsers = () =>
 const addUser = (e) => {
 	e.preventDefault();
 	
-	fetch("http://fecore.net.ua/rest/", {
+	fetch("http://fecore.net.ua/rest/?action=1&name=" + name.value + "&score=" + score.value, {
 		method: "POST",
-		//headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-		body: JSON.stringify({name: name.value, score: score.value})
+		headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+		body: JSON.stringify({"name": name.value, "score": score.value})
 	})
 	.then(response => {
 		if (response.ok) {
+			alert(`You've added a new User!`);
 			return response.json();
-			alert("You've added a new User!");
 		}
-		throw new Error("Error fetching data");
+		throw new Error(`Error fetching data`);
 	})
 	.catch(error => {
 		console.error("Error: ", error);
@@ -59,17 +59,17 @@ const addUser = (e) => {
 
 const updateUser = (e) => {
 	e.preventDefault();
-	fetch("http://fecore.net.ua/rest/"+idToUpdate.value, {
+	fetch("http://fecore.net.ua/rest/?action=2&id=" + idToUpdate.value + "&name=" + nameUpd.value + "&score=" + scoreUpd.value, {
 		method: "PUT",
 		headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
 		body: JSON.stringify({"name":nameUpd.value, "score":scoreUpd.value})
 	})
 	.then(response => {
 		if (response.ok) {
+			alert(`You've updated User's data!`);
 			return response.json();
-			alert("You've updated User's data!");
 		}
-		throw new Error("Error fetching data");
+		throw new Error(`Error fetching data`);
 	})
 	.catch(error => {
 		console.error("Error: ", error);
@@ -81,23 +81,21 @@ const updateUser = (e) => {
 
 const removeUser = (e) => {
 	e.preventDefault();
-	fetch("http://fecore.net.ua/rest/?id="+idToDelete.value, {
-		method: "DELETE",
-		headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+	fetch("http://fecore.net.ua/rest/?action=3&id=" + idToDelete.value, {
+		method: "DELETE"
 	})
 	.then(response => {
 		if (response.ok) {
-			alert(`You've deleted a User (ID - ${idToDelete})!`);
+			alert(`You've deleted a User (ID - ${idToDelete.value})!`);
 			return response.json();
 		}
-		throw new Error("Error deleting data");
+		throw new Error(`Error deleting data`);
 	})
 	.catch(error => {
 		console.error("Error: ", error);  
 	});
 	idToDelete.value = "";
 }
-
 
 getBtn.addEventListener("click", getUsers);
 addBtn.addEventListener("click", addUser);
