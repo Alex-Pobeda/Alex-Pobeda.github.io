@@ -60,7 +60,7 @@ const addUser = (e) => {
 const updateUser = (e) => {
 	e.preventDefault();
 	fetch("http://fecore.net.ua/rest/?action=2&id=" + idToUpdate.value + "&name=" + nameUpd.value + "&score=" + scoreUpd.value, {
-		method: "PUT",
+		method: "POST",
 		headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
 		body: JSON.stringify({"name":nameUpd.value, "score":scoreUpd.value})
 	})
@@ -82,7 +82,7 @@ const updateUser = (e) => {
 const removeUser = (e) => {
 	e.preventDefault();
 	fetch("http://fecore.net.ua/rest/?action=3&id=" + idToDelete.value, {
-		method: "DELETE"
+		method: "POST"
 	})
 	.then(response => {
 		if (response.ok) {
