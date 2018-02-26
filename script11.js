@@ -14,10 +14,10 @@ const updateView = users => {
   let htmlString = "";
   users.map(user => {
     htmlString += `<tr class="row">
-						<td>${user.id}</td>
-						<td class=${user.id}>${user.name}</td>
-						<td>${user.score}</td>
-					</tr>`;
+			<td>${user.id}</td>
+			<td class=${user.id}>${user.name}</td>
+			<td>${user.score}</td>
+		</tr>`;
   });
   tBody.innerHTML = htmlString;
 };
