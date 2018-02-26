@@ -14,10 +14,10 @@ const updateView = users => {
   let htmlString = "";
   users.map(user => {
     htmlString += `<tr class="row">
-			<td>${user.id}</td>
-			<td class=${user.id}>${user.name}</td>
-			<td>${user.score}</td>
-		</tr>`;
+						<td>${user.id}</td>
+						<td class=${user.id}>${user.name}</td>
+						<td>${user.score}</td>
+					</tr>`;
   });
   tBody.innerHTML = htmlString;
 };
@@ -61,7 +61,7 @@ const updateUser = (e) => {
 	e.preventDefault();
 	fetch("http://fecore.net.ua/rest/?action=2&id=" + idToUpdate.value + "&name=" + nameUpd.value + "&score=" + scoreUpd.value, {
 		method: "POST",
-		headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+		headers: new Headers(),
 		body: JSON.stringify({"name":nameUpd.value, "score":scoreUpd.value})
 	})
 	.then(response => {
