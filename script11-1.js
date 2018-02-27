@@ -15,8 +15,8 @@ const updateView = users => {
   users.map(user => {
     htmlString += `<tr class="row">
 						<td>${user.id}</td>
-						<td class=${user.id}>${user.name}</td>
-						<td>${user.score}</td>
+						<td>${user.name}</td>
+						<td>${user.age}</td>
 					</tr>`;
   });
   tBody.innerHTML = htmlString;
